@@ -14,7 +14,15 @@ import {
 } from "@/components/ui/HeroAnimations";
 import { MarqueeTicker } from "@/components/ui/MarqueeTicker";
 
-const featuredItems = [
+interface DisplayItem {
+  name: string;
+  category: string;
+  detail: string;
+  accent: string;
+  image?: string;
+}
+
+const featuredItems: DisplayItem[] = [
   {
     name: "Band Tee Import",
     category: "Ready Stock",
