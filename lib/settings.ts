@@ -4,6 +4,8 @@ import path from "path";
 export interface AppSettings {
   mainBannerUrl: string;
   mainBackgroundUrl: string;
+  waAdmin1: string;
+  waAdmin2: string;
 }
 
 const DATA_PATH = path.join(process.cwd(), "data", "settings.json");
@@ -11,6 +13,8 @@ const DATA_PATH = path.join(process.cwd(), "data", "settings.json");
 const defaultSettings: AppSettings = {
   mainBannerUrl: "/brand/wiztr-banner.svg",
   mainBackgroundUrl: "/brand/wiztr-bg.svg",
+  waAdmin1: "628980025000",
+  waAdmin2: "6289601205232",
 };
 
 export function getSettings(): AppSettings {

@@ -173,11 +173,13 @@ export function AnimatedStat({
   suffix = "",
   label,
   delay = 0,
+  staticValue,
 }: {
   value: number;
   suffix?: string;
   label: string;
   delay?: number;
+  staticValue?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const { value: displayed, start } = useCounter(value, 1.6, 0);
@@ -208,7 +210,7 @@ export function AnimatedStat({
       transition={{ delay: 1.3 + delay, duration: 0.6 }}
     >
       <p className="font-display text-2xl uppercase text-white tabular-nums">
-        {displayed}{suffix}
+        {staticValue ?? `${displayed}${suffix}`}
       </p>
       <p className="mt-1 text-[0.65rem] uppercase tracking-[0.15em] text-white/50 leading-4">
         {label}

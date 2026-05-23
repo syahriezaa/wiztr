@@ -215,9 +215,6 @@ const brands = [
   }
 ];
 
-const WA_ADMIN_1 = "628980025000";
-const WA_ADMIN_2 = "6289601205232";
-
 function buildWALink(phone: string, brand: string) {
   const text = encodeURIComponent(
     `Halo Admin WIZTR! 👋\n\nSaya ingin Pre-Order untuk brand:\n*${brand}*\n\nMohon info ketersediaan dan detail pemesanan. Terima kasih!`
@@ -225,7 +222,7 @@ function buildWALink(phone: string, brand: string) {
   return `https://api.whatsapp.com/send/?phone=%2B${phone}&text=${text}`;
 }
 
-export function PreOrderFlow() {
+export function PreOrderFlow({ waAdmin1 = "628980025000", waAdmin2 = "6289601205232" }: { waAdmin1?: string; waAdmin2?: string }) {
   const [selected, setSelected] = useState<string | null>(null);
   const [query, setQuery] = useState("");
 
@@ -251,7 +248,7 @@ export function PreOrderFlow() {
             Brand Collection
           </h2>
           <p className="mt-3 max-w-xl text-base leading-7 text-white/55">
-            Pilih brand untuk melihat koleksi resminya atau langsung hubungi admin untuk melakukan pre-order produk impianmu.
+            Pilih website untuk melihat koleksi resminya atau langsung hubungi admin untuk melakukan pre-order produk yang diinginkan.
           </p>
         </div>
 
@@ -441,7 +438,7 @@ export function PreOrderFlow() {
                 {/* Submit Buttons */}
                 <div className="grid gap-3 p-6 pt-2">
                   <a
-                    href={buildWALink(WA_ADMIN_1, selected)}
+                    href={buildWALink(waAdmin1, selected)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-between rounded-xl bg-[#25D366] px-5 py-4 transition hover:bg-[#20bd5a] hover:scale-[1.02] active:scale-[0.98]"
@@ -453,7 +450,7 @@ export function PreOrderFlow() {
                     <span className="text-xl">👉</span>
                   </a>
                   <a
-                    href={buildWALink(WA_ADMIN_2, selected)}
+                    href={buildWALink(waAdmin2, selected)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-between rounded-xl border border-[#25D366]/30 bg-[#25D366]/10 px-5 py-4 transition hover:bg-[#25D366]/20 hover:scale-[1.02] active:scale-[0.98]"

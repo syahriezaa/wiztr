@@ -45,10 +45,10 @@ const featuredItems: DisplayItem[] = [
 ];
 
 const sellingPoints = [
-  "Merch 100% original & authentic, langsung dari official store / label rekaman luar negeri.",
-  "Akses ke 40+ toko merch global termasuk Hot Topic, EMP, Impericon, Relapse Records, dan lainnya.",
-  "Layanan pre-order personal — pilih barang, kirim link ke admin, kami urus importnya.",
-  "Melayani fans metalhead, punk, hardcore, dan rock dari seluruh Indonesia sejak hari pertama.",
+  "40+ Worldwide Website & Label Record — akses ke ratusan official store dan label rekaman dunia.",
+  "100% Authentic & Original — langsung dari official store, bukan KW.",
+  "Proses Pre-Order yang praktis via WhatsApp — pilih item, kirim link, kami urus sisanya.",
+  "Worldwide shipping — kami tangani pengiriman dari luar negeri langsung ke pintumu.",
 ];
 
 const buyChannels = [
@@ -113,23 +113,23 @@ const buyChannels = [
 const faqs = [
   {
     question: "Apakah merch yang dijual 100% original?",
-    answer: "Ya, 100% original dan authentic. WIZTR hanya mengorder langsung dari official store, label rekaman resmi, atau distributor resmi brand tersebut. Tidak ada produk KW atau replica.",
+    answer: "Ya, 100% original dan authentic. WIZTR hanya mengimport langsung dari official store, label rekaman resmi, atau distributor resmi band / brand tersebut.",
   },
   {
     question: "Bagaimana cara melakukan pre-order?",
-    answer: "Cukup pilih brand dari list kami, klik 'View Site' untuk browse koleksi resminya, lalu copy link produk yang kamu mau. Setelah itu klik 'Order' dan hubungi admin via WhatsApp dengan link produk tersebut. Admin akan konfirmasi ketersediaan, estimasi harga total (termasuk shipping), dan detail pembayaran.",
+    answer: "Cukup pilih website dari list kami, klik 'View Site' untuk browse koleksi resminya, lalu copy link produk yang kamu mau. Setelah itu klik 'Order' dan hubungi admin via WhatsApp dengan link produk tersebut. Admin akan konfirmasi ketersediaan, estimasi harga total (termasuk shipping), dan detail pembayaran.",
   },
   {
     question: "Berapa lama proses pengiriman?",
-    answer: "Estimasi waktu bervariasi tergantung brand dan negara asal. Umumnya 2–4 minggu setelah pembayaran konfirmasi. Admin akan memberikan update tracking secara berkala.",
+    answer: "Estimasi waktu bervariasi tergantung website dan negara asal. Umumnya 4–6 minggu setelah pembayaran konfirmasi. Admin akan memberikan update tracking secara berkala.",
   },
   {
-    question: "Brand apa saja yang tersedia?",
+    question: "Band, Label Record, Website apa saja yang tersedia?",
     answer: "WIZTR memiliki akses ke 40+ official store dan label rekaman global seperti Hot Topic, EMP, Impericon, Relapse Records, Season of Mist, Deathwish Inc, dan masih banyak lagi. Jika brand yang kamu cari belum ada di list, kamu bisa request langsung ke admin.",
   },
   {
-    question: "Apakah bisa request brand atau produk yang tidak ada di list?",
-    answer: "Bisa! WIZTR menerima custom request untuk brand atau toko yang belum ada di list. Hubungi admin via WhatsApp dan tim kami akan coba carikan akses ke brand tersebut.",
+    question: "Apakah bisa request band atau produk yang tidak ada di list?",
+    answer: "Bisa! WIZTR menerima custom request untuk band atau toko yang belum ada di list. Hubungi admin via WhatsApp dan tim kami akan coba carikan akses ke brand tersebut.",
   },
 ];
 
@@ -157,14 +157,18 @@ function SectionTitle({
 
 import type { CatalogItem } from "@/lib/catalog";
 
-export function WiztrLandingPage({ 
+export function WiztrLandingPage({
   items,
   mainBannerUrl = "/brand/wiztr-banner.svg",
-  mainBackgroundUrl = "/brand/wiztr-bg.svg"
-}: { 
+  mainBackgroundUrl = "/brand/wiztr-bg.svg",
+  waAdmin1,
+  waAdmin2,
+}: {
   items?: CatalogItem[],
   mainBannerUrl?: string,
-  mainBackgroundUrl?: string
+  mainBackgroundUrl?: string,
+  waAdmin1?: string,
+  waAdmin2?: string,
 }) {
   const displayItems = items && items.length > 0 
     ? items.slice(0, 3).map(i => ({
@@ -240,7 +244,7 @@ export function WiztrLandingPage({
               <HeroStats>
                 <AnimatedStat value={40} suffix="+" label="Official stores & labels" delay={0} />
                 <AnimatedStat value={100} suffix="%" label="Original & authentic merch" delay={0.1} />
-                <AnimatedStat value={0} suffix="IDN" label="Pengiriman ke seluruh Indonesia" delay={0.2} />
+                <AnimatedStat value={0} staticValue="IDN" label="Pengiriman ke seluruh Indonesia" delay={0.2} />
               </HeroStats>
             </div>
 
@@ -336,14 +340,14 @@ export function WiztrLandingPage({
         </div>
       </section>
 
-      <PreOrderFlow />
+      <PreOrderFlow waAdmin1={waAdmin1} waAdmin2={waAdmin2} />
 
       <section id="collection" className="mx-auto w-full max-w-7xl px-6 py-20 sm:px-8 lg:px-10">
         <ScrollReveal variant="fadeUp">
           <SectionTitle
             eyebrow="Featured Collection"
-            title="Concept drops that feel like statements, not placeholders."
-            description="Sebelum katalog final masuk, landing page ini sudah menyiapkan framing produk dengan bahasa visual yang konsisten dan mudah diganti menjadi data nyata."
+            title="Pilihan merch terbaik, langsung dari tangan pertama."
+            description="Dari kaos band klasik hingga hoodie heavyweight resmi — semua produk WIZTR diimport langsung dari official store dan label rekaman dunia. 100% original, bukan KW."
           />
         </ScrollReveal>
 
@@ -412,7 +416,7 @@ export function WiztrLandingPage({
               <SectionTitle
                 eyebrow="Tentang WIZTR"
                 title="Import merch band terpercaya untuk penggemar musik Indonesia."
-                description="WIZTR hadir untuk menjembatani fans Indonesia dengan merchandise original dari band & label favorit mereka di seluruh dunia. Tidak perlu repot pesan sendiri — kami yang urus dari sourcing hingga pengiriman ke pintumu."
+                description="WIZTR hadir untuk menjembatani kalian dengan merchandise original dari band & label favorit di seluruh dunia. Tidak perlu repot pesan sendiri — kami yang urus dari sourcing hingga pengiriman ke pintumu."
               />
 
               <StaggerReveal className="grid gap-4 sm:grid-cols-2" staggerDelay={0.1}>
@@ -440,16 +444,16 @@ export function WiztrLandingPage({
                 Cara paling mudah dapat merch band import di Indonesia.
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-7 text-white/78 sm:text-lg">
-                Tidak perlu buka akun luar negeri, tidak perlu pusing soal kurs dan shipping internasional. Cukup pilih brand, temukan barang yang kamu mau, kirimkan linknya ke admin WIZTR — selesai.
+                Tidak perlu pusing soal kurs dan shipping internasional. Cukup pilih item, temukan barang yang kamu mau, kirimkan linknya ke admin WIZTR — selesai.
               </p>
             </div>
 
             <StaggerReveal className="grid gap-4 sm:grid-cols-2" staggerDelay={0.08}>
               {[
-                "100% Merch Asli & Original",
-                "40+ Brand & Label Rekaman Dunia",
-                "Proses Pre-Order yang Mudah via WA",
-                "Pengiriman ke Seluruh Indonesia",
+                "100% Authentic & Original",
+                "40+ Worldwide Website & Label Record",
+                "Proses Pre-Order yang Praktis via WhatsApp",
+                "Worldwide Shipping",
               ].map((item) => (
                 <StaggerItem key={item} variant="scaleUp">
                   <div className="flex min-h-32 items-end rounded-[1.6rem] border border-white/10 bg-white/[0.04] p-5 font-display text-2xl uppercase leading-tight text-white h-full">

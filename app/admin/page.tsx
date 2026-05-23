@@ -140,7 +140,7 @@ export default function AdminPage() {
 
   const [activeTab, setActiveTab] = useState<"catalog" | "settings">("catalog");
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [settings, setSettings] = useState({ mainBannerUrl: "", mainBackgroundUrl: "" });
+  const [settings, setSettings] = useState({ mainBannerUrl: "", mainBackgroundUrl: "", waAdmin1: "", waAdmin2: "" });
   const [savingSettings, setSavingSettings] = useState(false);
   const [selectedBannerFile, setSelectedBannerFile] = useState<File | null>(null);
   const [selectedBgFile, setSelectedBgFile] = useState<File | null>(null);
@@ -520,6 +520,32 @@ export default function AdminPage() {
                     </p>
                   </div>
                   
+                  <hr style={{borderColor: 'rgba(255,255,255,0.1)', margin: '1rem 0'}} />
+
+                  <div className="admin-input-group">
+                    <label htmlFor="waAdmin1">Nomor WhatsApp Admin 1</label>
+                    <input
+                      id="waAdmin1"
+                      name="waAdmin1"
+                      value={settings.waAdmin1}
+                      onChange={(e) => setSettings({ ...settings, waAdmin1: e.target.value })}
+                      placeholder="Contoh: 628980025000 (tanpa +)"
+                    />
+                    <p className="text-xs text-[rgba(245,241,235,0.4)] mt-1">Format: kode negara + nomor, tanpa tanda + atau spasi.</p>
+                  </div>
+
+                  <div className="admin-input-group">
+                    <label htmlFor="waAdmin2">Nomor WhatsApp Admin 2</label>
+                    <input
+                      id="waAdmin2"
+                      name="waAdmin2"
+                      value={settings.waAdmin2}
+                      onChange={(e) => setSettings({ ...settings, waAdmin2: e.target.value })}
+                      placeholder="Contoh: 6289601205232 (tanpa +)"
+                    />
+                    <p className="text-xs text-[rgba(245,241,235,0.4)] mt-1">Digunakan untuk tombol Order di halaman Pre-Order.</p>
+                  </div>
+
                   <div className="mt-4 flex justify-end">
                     <button type="submit" className="btn-primary" disabled={savingSettings}>
                       {savingSettings ? <span className="admin-spinner" /> : "Simpan Pengaturan"}

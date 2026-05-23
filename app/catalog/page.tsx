@@ -1,34 +1,43 @@
 import { getAvailableItems } from "@/lib/catalog";
 import type { CatalogItem } from "@/lib/catalog";
 import Link from "next/link";
+import type { Metadata } from "next";
+import { TiltCard } from "@/components/ui/TiltCard";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Katalog — WIZTR Merch",
   description:
-    "Lihat koleksi merchandise eksklusif WIZTR. Streetwear premium, desain bold, limited drop.",
+    "Lihat koleksi merchandise band import original WIZTR. T-Shirt, Hoodie, Jaket, dan aksesoris resmi dari 40+ official store dunia.",
+  openGraph: {
+    title: "Katalog — WIZTR Merch",
+    description: "Merch band import original dari 40+ official store dunia. 100% authentic, bukan KW.",
+    images: [{ url: "/brand/wiztr-banner.jpg" }],
+  },
 };
 
 function CatalogCard({ item }: { item: CatalogItem }) {
   return (
-    <div className="catalog-card">
-      <div className="catalog-card-img">
-        {item.image ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={item.image} alt={item.name} />
-        ) : (
-          <div className="catalog-card-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5a1.5 1.5 0 001.5-1.5v-15a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 4.5v15a1.5 1.5 0 001.5 1.5z" />
-            </svg>
-          </div>
-        )}
-        <span className="catalog-badge">{item.category}</span>
-      </div>
-      <div className="catalog-card-body">
-        <h3>{item.name}</h3>
-        <p>{item.description}</p>
-      </div>
-    </div>
+    <TiltCard className="catalog-card relative">
+      <Link href={`/catalog/${item.id}`} className="block relative z-10">
+        <div className="catalog-card-img">
+          {item.image ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={item.image} alt={item.name} />
+          ) : (
+            <div className="catalog-card-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5a1.5 1.5 0 001.5-1.5v-15a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 4.5v15a1.5 1.5 0 001.5 1.5z" />
+              </svg>
+            </div>
+          )}
+          <span className="catalog-badge">{item.category}</span>
+        </div>
+        <div className="catalog-card-body">
+          <h3>{item.name}</h3>
+          <p>{item.description}</p>
+        </div>
+      </Link>
+    </TiltCard>
   );
 }
 

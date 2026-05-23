@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const navLinks = [
@@ -25,7 +26,12 @@ export function Navbar() {
 
   return (
     <>
-      <header className="relative z-20 flex items-center justify-between gap-4">
+      <motion.header
+        className="relative z-20 flex items-center justify-between gap-4"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      >
         {/* Logo */}
         <a href="#home" className="flex items-center gap-3 shrink-0">
           <Image src="/brand/wiztr-logo.svg" alt="WIZTR logo" width={48} height={48} />
@@ -64,7 +70,7 @@ export function Navbar() {
             <span className="block w-4 h-0.5 bg-white" />
           </button>
         </div>
-      </header>
+      </motion.header>
 
       {/* Drawer overlay — below lg */}
       {open && (

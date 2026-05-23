@@ -17,8 +17,8 @@ export async function PUT(request: Request) {
   try {
     const body = await request.json();
     // Only extract known fields
-    const { mainBannerUrl } = body;
-    const updated = saveSettings({ mainBannerUrl });
+    const { mainBannerUrl, mainBackgroundUrl, waAdmin1, waAdmin2 } = body;
+    const updated = saveSettings({ mainBannerUrl, mainBackgroundUrl, waAdmin1, waAdmin2 });
     return NextResponse.json(updated);
   } catch {
     return NextResponse.json({ error: "Invalid request" }, { status: 400 });
