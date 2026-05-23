@@ -1,18 +1,32 @@
 @import "tailwindcss";
 
+/* ── Brigend Expanded — letakkan file di public/fonts/ ── */
+@font-face {
+  font-family: 'Brigend Expanded';
+  src: url('/fonts/brigend-expanded.woff2') format('woff2'),
+       url('/fonts/brigend-expanded.otf') format('opentype'),
+       url('/fonts/brigend-expanded.ttf') format('truetype');
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #090909;
   --foreground: #f5f1eb;
   --wiztr-black: #090909;
   --wiztr-red: #d6251e;
   --wiztr-cream: #f2eadf;
+
+  --font-tagline: 'Brigend Expanded', 'Bebas Neue', Impact, sans-serif;
+  --font-description: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-space-grotesk);
-  --font-display: var(--font-bebas-neue);
+  --font-sans: var(--font-description);
+  --font-display: var(--font-tagline);
 }
 
 * {
@@ -26,7 +40,8 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-space-grotesk), sans-serif;
+  font-family: var(--font-description);
+  font-style: oblique;
 }
 
 a {
@@ -190,7 +205,7 @@ html {
   font-weight: 600;
 }
 .catalog-title-group h1 {
-  font-family: var(--font-bebas-neue, sans-serif);
+  font-family: var(--font-tagline);
   font-size: clamp(3rem, 8vw, 6rem);
   line-height: 1;
   color: var(--wiztr-cream);
@@ -482,14 +497,14 @@ html {
 }
 .admin-login-logo img { height: 28px; }
 .admin-login-brand {
-  font-family: var(--font-bebas-neue, sans-serif);
+  font-family: var(--font-tagline);
   font-size: 1.75rem;
   color: var(--wiztr-cream);
   letter-spacing: 0.1em;
 }
 
 .admin-login-card h1 {
-  font-family: var(--font-bebas-neue, sans-serif);
+  font-family: var(--font-tagline);
   font-size: 1.75rem;
   letter-spacing: 0.08em;
   color: var(--wiztr-cream);
@@ -568,7 +583,7 @@ html {
 }
 .admin-sidebar-logo img { height: 20px; }
 .admin-sidebar-logo span {
-  font-family: var(--font-bebas-neue, sans-serif);
+  font-family: var(--font-tagline);
   font-size: 1.4rem;
   color: var(--wiztr-cream);
   letter-spacing: 0.1em;
@@ -631,7 +646,7 @@ html {
   flex-wrap: wrap;
 }
 .admin-topbar h1 {
-  font-family: var(--font-bebas-neue, sans-serif);
+  font-family: var(--font-tagline);
   font-size: 2rem;
   letter-spacing: 0.06em;
   color: var(--wiztr-cream);
@@ -780,7 +795,7 @@ html {
   margin-bottom: 1.5rem;
 }
 .modal-header h2 {
-  font-family: var(--font-bebas-neue, sans-serif);
+  font-family: var(--font-tagline);
   font-size: 1.5rem;
   letter-spacing: 0.06em;
   color: var(--wiztr-cream);
@@ -859,7 +874,7 @@ html {
   }
 
   .admin-mobile-topbar-brand {
-    font-family: var(--font-bebas-neue, sans-serif);
+    font-family: var(--font-tagline);
     font-size: 1.4rem;
     color: var(--wiztr-cream);
     letter-spacing: 0.1em;
