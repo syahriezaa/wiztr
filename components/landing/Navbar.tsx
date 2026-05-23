@@ -36,7 +36,7 @@ export function Navbar() {
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-8 text-sm uppercase tracking-[0.24em] text-white/70 md:flex">
+        <nav className="hidden items-center gap-6 text-sm uppercase tracking-[0.18em] text-white/70 lg:flex">
           {navLinks.map((link) => (
             <a key={link.href} href={link.href} className="transition hover:text-white">
               {link.label}
@@ -48,16 +48,16 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <a
             href="/catalog"
-            className="hidden sm:inline-flex rounded-full border border-[var(--wiztr-red)] bg-[var(--wiztr-red)] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#f03b34]"
+            className="hidden lg:inline-flex rounded-full border border-[var(--wiztr-red)] bg-[var(--wiztr-red)] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#f03b34]"
           >
             Full Catalog
           </a>
 
-          {/* Hamburger — mobile only */}
+          {/* Hamburger — below lg */}
           <button
             onClick={() => setOpen(true)}
             aria-label="Open menu"
-            className="flex md:hidden flex-col justify-center items-center w-10 h-10 gap-1.5"
+            className="flex lg:hidden flex-col justify-center items-center w-10 h-10 gap-1.5"
           >
             <span className="block w-6 h-0.5 bg-white" />
             <span className="block w-6 h-0.5 bg-white" />
@@ -66,9 +66,9 @@ export function Navbar() {
         </div>
       </header>
 
-      {/* Mobile drawer overlay */}
+      {/* Drawer overlay — below lg */}
       {open && (
-        <div className="fixed inset-0 z-50 md:hidden">
+        <div className="fixed inset-0 z-50 lg:hidden">
           {/* Backdrop */}
           <div
             className="absolute inset-0 bg-black/70 backdrop-blur-sm"
