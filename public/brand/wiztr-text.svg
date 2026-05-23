@@ -1,0 +1,31 @@
+<svg id="Text" xmlns="http://www.w3.org/2000/svg" width="3556" height="2000" viewBox="0 0 3556 2000">
+  <defs>
+    <style>
+      .cls-1, .cls-3 {
+        font-size: 50px;
+        text-transform: uppercase;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-1 {
+        font-family: Bebas;
+      }
+
+      .cls-2 {
+        font-size: 59.568px;
+        font-family: "Myriad Pro";
+      }
+
+      .cls-3 {
+        font-family: "Black Ops One";
+      }
+    </style>
+  </defs>
+  <text id="Website" class="cls-1" transform="translate(2251.801 1752.496) scale(1.106 1.107)">WWW.WIZTR.COM</text>
+  <text id="Body_text" data-name="Body text" class="cls-2" transform="translate(2252.285 1800.596) scale(0.629 0.63)">Jl. MT Haryono Ruko DITAS kav. 26, Malang, Indonesia, East Java</text>
+  <text id="Subtitle" class="cls-1" transform="translate(131.426 1877.404) scale(2.392 2.393)">register on our website and get 20% off </text>
+  <text id="Title" class="cls-3" transform="translate(2067.732 800.944) scale(4.779 4.78)">OFFICIAL<tspan x="0" dy="60">MERCH</tspan><tspan x="0" dy="60">STORE</tspan></text>
+</svg>

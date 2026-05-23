@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1",
+    "name": "WIZTR Signature Red Banner Tee",
+    "description": "T-Shirt dengan cetak grafis banner merah WIZTR di bagian punggung. Potongan oversized untuk gaya streetwear maksimal. Dibuat dari 100% premium cotton.",
+    "category": "T-Shirt",
+    "image": "https://placehold.co/600x800/111/d6251e?text=Signature+Tee",
+    "available": true,
+    "createdAt": "2026-05-13T00:00:00.000Z"
+  },
+  {
+    "id": "2",
+    "name": "WIZTR Core Logo Hoodie",
+    "description": "Hoodie tebal dengan bordir logo WIZTR berukuran kecil di dada kiri. Material fleece berat memastikan kehangatan tanpa mengorbankan siluet.",
+    "category": "Hoodie",
+    "image": "https://placehold.co/600x800/111/f5f1eb?text=Core+Hoodie",
+    "available": true,
+    "createdAt": "2026-05-13T00:01:00.000Z"
+  },
+  {
+    "id": "3",
+    "name": "WIZTR Tech Cargo Pants",
+    "description": "Celana kargo dengan kompartemen taktis dan tali serut di pergelangan kaki. Tahan percikan air (water-repellent) dan didesain untuk pergerakan bebas.",
+    "category": "Celana",
+    "image": "https://placehold.co/600x800/111/555?text=Cargo+Pants",
+    "available": true,
+    "createdAt": "2026-05-13T00:02:00.000Z"
+  },
+  {
+    "id": "4",
+    "name": "WIZTR Emblem Snapback",
+    "description": "Topi model snapback dengan bordir timbul 'WIZTR' putih di atas dasar hitam pekat. Cocok untuk melengkapi fit harian Anda.",
+    "category": "Aksesoris",
+    "image": "https://placehold.co/600x600/111/fff?text=Snapback",
+    "available": true,
+    "createdAt": "2026-05-13T00:03:00.000Z"
+  },
+  {
+    "id": "5",
+    "name": "WIZTR Vintage Washed Zip-Up",
+    "description": "Jaket zip-up dengan efek acid wash vintage. Menggunakan ritsleting heavy-duty dan sablon logo tersembunyi di kerah.",
+    "category": "Jaket",
+    "image": "https://placehold.co/600x800/333/d6251e?text=Vintage+ZipUp",
+    "available": true,
+    "createdAt": "2026-05-13T00:04:00.000Z"
+  },
+  {
+    "id": "6",
+    "name": "WIZTR Essential Tote Bag",
+    "description": "Tas jinjing kanvas tebal dengan grafis besar WIZTR. Kompartemen utama yang luas mampu membawa laptop 15 inci dan esensial lainnya.",
+    "category": "Aksesoris",
+    "image": "https://placehold.co/600x800/f2eadf/111?text=Tote+Bag",
+    "available": false,
+    "createdAt": "2026-05-13T00:05:00.000Z"
+  },
+  {
+    "id": "7",
+    "name": "WIZTR Graphic Long Sleeve",
+    "description": "Kaus lengan panjang dengan detail printing glitch typography di sepanjang lengan. Nyaman untuk layering di cuaca dingin.",
+    "category": "T-Shirt",
+    "image": "https://placehold.co/600x800/111/00e5ff?text=Long+Sleeve",
+    "available": true,
+    "createdAt": "2026-05-13T00:06:00.000Z"
+  },
+  {
+    "id": "8",
+    "name": "WIZTR Survival Keyring",
+    "description": "Gantungan kunci logam kokoh berbahan alloy dengan strap kain tebal berlogo WIZTR merah.",
+    "category": "Lainnya",
+    "image": "https://placehold.co/600x600/111/d6251e?text=Keyring",
+    "available": true,
+    "createdAt": "2026-05-13T00:07:00.000Z"
+  }
+]
