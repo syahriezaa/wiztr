@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Navbar } from "./Navbar";
 import { PreOrderFlow } from "./PreOrderFlow";
 import { ScrollReveal, StaggerReveal, StaggerItem } from "@/components/ui/ScrollReveal";
 import {
@@ -204,44 +205,7 @@ export function WiztrLandingPage({
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
 
         <div className="relative z-10 mx-auto flex h-screen w-full max-w-7xl flex-col px-6 pb-6 pt-5 sm:px-8 lg:px-10">
-          <header className="relative z-20 flex items-center justify-between gap-6">
-            <a href="#home" className="flex items-center gap-3">
-              <Image src="/brand/wiztr-logo.svg" alt="WIZTR logo" width={48} height={48} />
-              <div className="space-y-1">
-                <p className="font-display text-2xl uppercase leading-none tracking-[0.1em]">
-                  WIZTR
-                </p>
-                <p className="text-xs uppercase tracking-[0.32em] text-white/60">
-                  Official Merch
-                </p>
-              </div>
-            </a>
-
-            <nav className="hidden items-center gap-8 text-sm uppercase tracking-[0.24em] text-white/70 md:flex">
-              <a href="#home" className="transition hover:text-white">
-                Home
-              </a>
-              <a href="#preorder" className="transition hover:text-white">
-                Pre Order
-              </a>
-              <a href="/catalog" className="transition hover:text-white">
-                Catalog
-              </a>
-              <a href="#about" className="transition hover:text-white">
-                About
-              </a>
-              <a href="#faq" className="transition hover:text-white">
-                FAQ
-              </a>
-            </nav>
-
-            <a
-              href="/catalog"
-              className="rounded-full border border-[var(--wiztr-red)] bg-[var(--wiztr-red)] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#f03b34]"
-            >
-              Full Catalog
-            </a>
-          </header>
+          <Navbar />
 
           <div className="relative z-10 grid flex-1 gap-8 py-4 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div className="relative z-10 space-y-5">

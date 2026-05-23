@@ -139,6 +139,7 @@ export default function AdminPage() {
   const [deleteId, setDeleteId] = useState<string | null>(null);
 
   const [activeTab, setActiveTab] = useState<"catalog" | "settings">("catalog");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [settings, setSettings] = useState({ mainBannerUrl: "", mainBackgroundUrl: "" });
   const [savingSettings, setSavingSettings] = useState(false);
   const [selectedBannerFile, setSelectedBannerFile] = useState<File | null>(null);
@@ -280,29 +281,53 @@ export default function AdminPage() {
 
   return (
     <div className="admin-page">
+      {/* Mobile top bar */}
+      <div className="admin-mobile-topbar">
+        <span className="admin-mobile-topbar-brand">WIZTR</span>
+        <button className="admin-hamburger" onClick={() => setSidebarOpen(true)} aria-label="Open menu">
+          <span />
+          <span />
+          <span />
+        </button>
+      </div>
+
+      {/* Sidebar overlay */}
+      <div
+        className={`admin-sidebar-overlay ${sidebarOpen ? "sidebar-open" : ""}`}
+        onClick={() => setSidebarOpen(false)}
+      />
+
       {/* Sidebar */}
-      <aside className="admin-sidebar">
+      <aside className={`admin-sidebar ${sidebarOpen ? "sidebar-open" : ""}`}>
         <div className="admin-sidebar-logo">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/brand/WIZTR text.svg" alt="WIZTR" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />
           <span>WIZTR</span>
+          <button
+            onClick={() => setSidebarOpen(false)}
+            aria-label="Close menu"
+            style={{ marginLeft: "auto", background: "none", border: "none", color: "rgba(245,241,235,0.4)", cursor: "pointer", lineHeight: 1 }}
+            className="md:hidden"
+          >
+            ✕
+          </button>
         </div>
         <nav className="admin-nav">
-          <button 
+          <button
             className={`admin-nav-item ${activeTab === "catalog" ? "active" : ""}`}
-            onClick={() => setActiveTab("catalog")}
+            onClick={() => { setActiveTab("catalog"); setSidebarOpen(false); }}
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18"><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" /></svg>
             Katalog
           </button>
-          <button 
+          <button
             className={`admin-nav-item ${activeTab === "settings" ? "active" : ""}`}
-            onClick={() => setActiveTab("settings")}
+            onClick={() => { setActiveTab("settings"); setSidebarOpen(false); }}
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18"><path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
             Pengaturan
           </button>
-          <a href="/catalog" target="_blank" className="admin-nav-item">
+          <a href="/catalog" target="_blank" className="admin-nav-item" onClick={() => setSidebarOpen(false)}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
             Lihat Katalog
           </a>
